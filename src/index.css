@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Times New Roman", Times, serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --color-bg: #F8F7F2;
+  --color-ink: #1A1A1A;
+  --color-accent: #D4A373;
+  --color-line: rgba(26, 26, 26, 0.15);
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+}
+
+.serif {
+  @apply font-serif;
+}
+
+.italic-serif {
+  @apply font-serif italic;
+}
+
+.unit-tag {
+  @apply text-[10px] bg-ink text-bg px-1.5 py-0.5 rounded-sm uppercase font-bold tracking-tighter self-center;
+}
+
+.data-row {
+  @apply border-b border-line hover:bg-accent/5 transition-colors duration-200;
+}
+
+.col-header {
+  @apply text-[11px] uppercase tracking-widest font-bold opacity-60 border-b border-ink pb-2;
+}
+
+.data-value {
+  @apply font-mono tracking-tight;
+}
+
+/* Custom scrollbar for library */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+}
